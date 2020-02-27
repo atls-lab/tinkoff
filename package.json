@@ -12,6 +12,7 @@
     }
   },
   "scripts": {
+    "commit": "mctl commit",
     "lint": "mctl lint",
     "typecheck": "mctl typecheck",
     "format": "mctl format",
