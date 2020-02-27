@@ -32,7 +32,7 @@ export class API {
 
   public constructor(tinkoffCore: TinkoffCore) {
     this.tinkoffCore = tinkoffCore
-    this.requestSigner = new RequstSigner(this.tinkoffCore)
+    this.requestSigner = new RequstSigner(this.tinkoffCore.options)
     this.injectAPI()
   }
 
@@ -65,11 +65,8 @@ export class API {
   }
 
   private async call(options: ApiCallOptions) {
-    const { baseUrl } = this.tinkoffCore.options
-    const requestUrl = new URL(baseUrl)
-    requestUrl.pathname = `${options.namespace}/${options.method}`
-
-    this.signRequest(options.requestParams)
+    const requestUrl = this.buildUrl(options)
+    this.requestSigner.singRequest(options.requestParams)
 
     const response = await fetch(requestUrl, {
       method: options.httpMethod,
@@ -79,7 +76,10 @@ export class API {
     return response.json()
   }
 
-  private signRequest(request: any) {
-    request.Token = this.requestSigner.generateSignatureByRequest(request)
+  private buildUrl(options: ApiCallOptions) {
+    const { baseUrl } = this.tinkoffCore.options
+    const requestUrl = new URL(baseUrl)
+    requestUrl.pathname = `${options.namespace}/${options.method}`
+    return requestUrl
   }
 }

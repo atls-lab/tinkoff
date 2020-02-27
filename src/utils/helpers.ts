@@ -1,1 +1,1 @@
-export const sortByASCII = (a: string, b: string) => a.charCodeAt(0) - b.charCodeAt(0)
+export const sortAlphabetically = (a: string, b: string) => a.localeCompare(b)
