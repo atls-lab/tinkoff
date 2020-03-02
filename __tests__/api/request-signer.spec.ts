@@ -1,10 +1,10 @@
-import { RequstSigner } from '../../src/api/request-signer'
+import { RequestSigner } from '../../src/api/request-signer'
 
 describe('RequstSigner', () => {
-  let requestSigner: RequstSigner
+  let requestSigner: RequestSigner
 
   beforeEach(() => {
-    requestSigner = new RequstSigner({ password: 'TinkoffBankTest' })
+    requestSigner = new RequestSigner()
   })
 
   describe('singRequest', () => {
@@ -14,6 +14,7 @@ describe('RequstSigner', () => {
         Amount: 100000,
         OrderId: 'TokenExample',
         Description: 'test',
+        Password: 'TinkoffBankTest',
         DATA: {
           Phone: '+71234567890',
           Email: 'a@test.com',

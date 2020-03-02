@@ -1,8 +1,8 @@
-import { InitRequestParams, InitResponse } from './init'
+import { InitRequestParams, InitResponse } from '../common'
 
 export interface Autopayments {
   /**
    * Метод создает платеж: продавец получает ссылку на платежную форму и должен перенаправить по ней покупателя
    */
-  init(params?: InitRequestParams): InitResponse
+  Init(params?: InitRequestParams): Promise<InitResponse>
 }

@@ -1,13 +1,12 @@
-export { TinkoffPublicOptions } from './interfaces'
+export { TinkoffPublicOptions, InitResponse, InitRequestParams } from './interfaces'
+
 export {
-  InitRequestParams,
-  InitResponse,
   LanguageType,
   PayType,
   PaymentMethodType,
   PaymentObjectType,
   TaxType,
   TexationType,
-} from './api/api-types'
+} from './enums'
 
 export * from './tinkoff'

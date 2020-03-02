@@ -1,38 +1,24 @@
-import fetch            from 'node-fetch'
-
-import { TinkoffCore }  from '../tinkoff-core'
-import { Autopayments } from './api-types'
-import { RequstSigner } from './request-signer'
+import { ApiCallOptions, Autopayments, Payments } from '../interfaces'
+import { TinkoffCore }                            from '../tinkoff-core'
+import { APIRequest }                             from './api-request'
 
 const tinkoffAPIMetaInfo = {
-  autopayments: new Map([
-    ['init', 'POST'],
-    ['charge', 'POST'],
-    ['addCustomer', 'POST'],
-    ['getCustomer', 'POST'],
-    ['removeCustomer', 'POST'],
-    ['getCardList', 'POST'],
-    ['removeCard', 'POST'],
+  autopayments: new Map([['Init', 'POST']]),
+  payments: new Map([
+    ['Init', 'POST'],
+    ['Cancel', 'POST'],
   ]),
-}
-
-export interface ApiCallOptions {
-  readonly namespace: string
-  readonly method: string
-  readonly httpMethod: string
-  readonly requestParams: any
 }
 
 export class API {
   private readonly tinkoffCore: TinkoffCore
 
-  private readonly requestSigner: RequstSigner
-
   public readonly autopayments!: Autopayments
+
+  public readonly payments!: Payments
 
   public constructor(tinkoffCore: TinkoffCore) {
     this.tinkoffCore = tinkoffCore
-    this.requestSigner = new RequstSigner(this.tinkoffCore.options)
     this.injectAPI()
   }
 
@@ -48,11 +34,19 @@ export class API {
               return
             }
 
+            /**
+             * @todo refactor it, need to create an abstraction for options
+             */
             const apiCallOptions: ApiCallOptions = {
               httpMethod,
-              method: property,
-              namespace,
+              apiMethod: property,
               requestParams: params,
+              baseUrl: this.tinkoffCore.options.baseUrl,
+              headers: this.tinkoffCore.options.headers,
+              additionalBody: {
+                Password: this.tinkoffCore.options.password,
+                TerminalKey: this.tinkoffCore.options.terminalKey,
+              },
             }
 
             // eslint-disable-next-line consistent-return
@@ -65,21 +59,6 @@ export class API {
   }
 
   private async call(options: ApiCallOptions) {
-    const requestUrl = this.buildUrl(options)
-    this.requestSigner.singRequest(options.requestParams)
-
-    const response = await fetch(requestUrl, {
-      method: options.httpMethod,
-      body: JSON.stringify(options.requestParams),
-    })
-
-    return response.json()
-  }
-
-  private buildUrl(options: ApiCallOptions) {
-    const { baseUrl } = this.tinkoffCore.options
-    const requestUrl = new URL(baseUrl)
-    requestUrl.pathname = `${options.namespace}/${options.method}`
-    return requestUrl
+    return new APIRequest(options)
   }
 }
