@@ -1,6 +1,6 @@
 {
   "name": "@aunited/tinkoff-api",
-  "version": "0.0.1-pre-alpha.1",
+  "version": "0.0.1-pre-alpha.2",
   "main": "lib/index.js",
   "license": "UNLICENSED",
   "files": [
