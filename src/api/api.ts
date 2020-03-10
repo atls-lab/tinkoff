@@ -7,6 +7,7 @@ const tinkoffAPIMetaInfo = {
   payments: new Map([
     ['Init', 'POST'],
     ['Cancel', 'POST'],
+    ['Charge', 'POST'],
   ]),
 }
 
