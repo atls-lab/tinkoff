@@ -57,6 +57,11 @@ export interface ChargeResponse {
   readonly Success: boolean
 
   /**
+   * Статус платежа	string(20)
+   */
+  readonly Status: string
+
+  /**
    * Уникальный идентификатор транзакции в системе банка	number(20)
    */
   readonly PaymentID: number
