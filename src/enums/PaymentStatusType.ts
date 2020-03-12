@@ -1,4 +1,5 @@
 export enum PaymentStatusType {
+  NEW = 'NEW',
   CONFIRMED = 'CONFIRMED',
   REJECTED = 'REJECTED',
   AUTHORIZED = 'AUTHORIZED',
