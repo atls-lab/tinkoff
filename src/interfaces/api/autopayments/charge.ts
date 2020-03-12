@@ -22,17 +22,17 @@ export interface ChargeRequestParams {
   /**
    * Получение покупателем уведомлений на электронную почту
    */
-  readonly SendEmail: boolean
+  readonly SendEmail?: boolean
 
   /**
    * лектронная почта покупателя	string	Да, если передан параметр
    */
-  readonly InfoEmail: string
+  readonly InfoEmail?: string
 
   /**
    * IP-адрес покупателя	string(40)
    */
-  readonly IP: string
+  readonly IP?: string
 }
 
 export interface ChargeResponse {
