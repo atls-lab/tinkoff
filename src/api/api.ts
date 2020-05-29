@@ -3,7 +3,10 @@ import { TinkoffCore }                            from '../tinkoff-core'
 import { APIRequest }                             from './api-request'
 
 const tinkoffAPIMetaInfo = {
-  autopayments: new Map([['Init', 'POST']]),
+  autopayments: new Map([
+    ['Init', 'POST'],
+    ['RemoveCard', 'POST'],
+  ]),
   payments: new Map([
     ['Init', 'POST'],
     ['Cancel', 'POST'],

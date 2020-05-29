@@ -1,5 +1,6 @@
-import { InitRequestParams, InitResponse }     from '../common'
-import { ChargeRequestParams, ChargeResponse } from './charge'
+import { InitRequestParams, InitResponse }             from '../common'
+import { ChargeRequestParams, ChargeResponse }         from './charge'
+import { RemoveCardRequestParams, RemoveCardResponse } from './remove-card'
 
 export interface Autopayments {
   /**
@@ -14,4 +15,9 @@ export interface Autopayments {
    * на который требуется корректный ответ.
    */
   Charge(params?: ChargeRequestParams): Promise<ChargeResponse>
+
+  /**
+   * Метод удаляет привязанную карту покупателя
+   */
+  RemoveCard(params?: RemoveCardRequestParams): Promise<RemoveCardResponse>
 }
