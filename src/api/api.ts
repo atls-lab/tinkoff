@@ -6,11 +6,11 @@ const tinkoffAPIMetaInfo = {
   autopayments: new Map([
     ['Init', 'POST'],
     ['RemoveCard', 'POST'],
+    ['Charge', 'POST'],
   ]),
   payments: new Map([
     ['Init', 'POST'],
     ['Cancel', 'POST'],
-    ['Charge', 'POST'],
   ]),
 }
 
