@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@monstrs/mctl": "0.1.82",
-    "@types/node": "13.7.4",
+    "@types/node": "13.13.11",
     "@types/node-fetch": "2.5.4",
     "husky": "4.2.3",
     "jest": "25.1.0",
