@@ -30,7 +30,7 @@
     "@types/node": "13.13.11",
     "@types/node-fetch": "2.5.7",
     "husky": "4.2.5",
-    "jest": "25.5.4",
+    "jest": "26.0.1",
     "typescript": "3.9.5"
   }
 }
