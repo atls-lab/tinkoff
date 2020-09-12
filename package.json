@@ -23,7 +23,7 @@
     "prepack": "yarn run build"
   },
   "dependencies": {
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.1"
   },
   "devDependencies": {
     "@monstrs/mctl": "0.1.82",
