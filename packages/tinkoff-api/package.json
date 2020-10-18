@@ -1,0 +1,22 @@
+{
+  "name": "@aunited/tinkoff-api",
+  "version": "0.0.1-pre-alpha.6",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "typings": "dist/index.d.ts",
+  "license": "UNLICENSED",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prepublishOnly": "yarn run build",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "node-fetch": "2.6.1",
+    "rimraf": "3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "13.13.25",
+    "@types/node-fetch": "2.5.7",
+    "typescript": "3.9.5"
+  }
+}

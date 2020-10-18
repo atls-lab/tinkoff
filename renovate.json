@@ -1,12 +1,5 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "labels": [
-    "dependencies"
-  ],
-  "schedule": [
-    "after 6am every weekday",
-    "before 9am every weekday"
-  ]
+  "extends": ["config:base"],
+  "labels": ["dependencies"],
+  "schedule": ["before 9am on the first day of the month"]
 }

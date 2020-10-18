@@ -1,36 +1,29 @@
 {
-  "name": "@aunited/tinkoff-api",
-  "version": "0.0.1-pre-alpha.6",
-  "main": "lib/index.js",
+  "private": true,
   "license": "UNLICENSED",
-  "files": [
-    "lib"
+  "scripts": {
+    "build": "lerna run build",
+    "lint": "mctl lint",
+    "test": "mctl test",
+    "commit": "mctl commit",
+    "format": "mctl format",
+    "typecheck": "mctl typecheck",
+    "checkcommit": "mctl precommit"
+  },
+  "devDependencies": {
+    "@atlantis-lab/tsconfig": "0.0.23",
+    "@monstrs/mctl": "0.1.82",
+    "husky": "4.3.0",
+    "typescript": "4.0.3",
+    "lerna": "3.22.1"
+  },
+  "workspaces": [
+    "packages/*"
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run lint && yarn run typecheck && yarn run format && yarn run test"
+      "pre-commit": "mctl precommit",
+      "commit-msg": "mctl commitmsg"
     }
-  },
-  "scripts": {
-    "test": "mctl test",
-    "commit": "mctl commit",
-    "lint": "mctl lint",
-    "typecheck": "mctl typecheck",
-    "format": "mctl format",
-    "build": "tsc -p ./tsconfig.json",
-    "watch:build": "tsc --watch",
-    "prepublishOnly": "yarn run format && yarn run lint && yarn run typecheck && yarn run test",
-    "prepack": "yarn run build"
-  },
-  "dependencies": {
-    "node-fetch": "2.6.1"
-  },
-  "devDependencies": {
-    "@monstrs/mctl": "0.1.82",
-    "@types/node": "13.13.25",
-    "@types/node-fetch": "2.5.7",
-    "husky": "4.3.0",
-    "jest": "26.5.3",
-    "typescript": "4.0.3"
   }
 }
