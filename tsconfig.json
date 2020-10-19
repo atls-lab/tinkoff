@@ -1,8 +1,5 @@
 {
-  "extends": "@monstrs/tsconfig/tsconfig.lib.json",
-  "compilerOptions": {
-    "outDir": "./lib",
-    "removeComments": false
-  },
-  "include": ["src/**/*"]
+  "extends": "@atlantis-lab/tsconfig/tsconfig.base.json",
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
