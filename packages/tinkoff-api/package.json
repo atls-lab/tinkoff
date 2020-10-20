@@ -15,7 +15,7 @@
     "rimraf": "3.0.2"
   },
   "devDependencies": {
-    "@types/node": "13.13.25",
+    "@types/node": "13.13.26",
     "@types/node-fetch": "2.5.7",
     "typescript": "3.9.5"
   }
