@@ -1,5 +1,5 @@
 {
-  "name": "@aunited/tinkoff-api",
+  "name": "@atlantis-lab/tinkoff-api",
   "version": "0.0.1-pre-alpha.6",
   "main": "dist/index.js",
   "source": "src/index.ts",
