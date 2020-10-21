@@ -1,6 +1,6 @@
 {
   "name": "@atlantis-lab/tinkoff-api",
-  "version": "0.0.1-pre-alpha.6",
+  "version": "0.0.0",
   "main": "dist/index.js",
   "source": "src/index.ts",
   "typings": "dist/index.d.ts",
