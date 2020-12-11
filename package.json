@@ -14,7 +14,7 @@
     "@atlantis-lab/tsconfig": "0.0.23",
     "@monstrs/mctl": "0.1.82",
     "husky": "4.3.0",
-    "typescript": "4.0.3",
+    "typescript": "4.1.3",
     "lerna": "3.22.1"
   },
   "workspaces": [
