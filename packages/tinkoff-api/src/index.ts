@@ -8,6 +8,8 @@ export {
   TaxType,
   TexationType,
   PaymentStatusType,
+  CardStatus,
+  CardType,
 } from './enums'
 
 export * from './tinkoff'

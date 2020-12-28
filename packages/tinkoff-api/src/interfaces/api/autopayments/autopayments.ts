@@ -1,5 +1,6 @@
 import { InitRequestParams, InitResponse }             from '../common'
 import { ChargeRequestParams, ChargeResponse }         from './charge'
+import { GetCardListParams, GetCardListResponse }      from './get-card-list'
 import { RemoveCardRequestParams, RemoveCardResponse } from './remove-card'
 
 export interface Autopayments {
@@ -20,4 +21,9 @@ export interface Autopayments {
    * Метод удаляет привязанную карту покупателя
    */
   RemoveCard(params?: RemoveCardRequestParams): Promise<RemoveCardResponse>
+
+  /**
+   * Метод возвращает список сохраненных карт зарегистрированного покупателя.
+   */
+  GetCardList(params?: GetCardListParams): Promise<GetCardListResponse>
 }
