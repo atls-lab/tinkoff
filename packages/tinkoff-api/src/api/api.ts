@@ -7,6 +7,7 @@ const tinkoffAPIMetaInfo = {
     ['Init', 'POST'],
     ['RemoveCard', 'POST'],
     ['Charge', 'POST'],
+    ['GetCardList', 'POST'],
   ]),
   payments: new Map([
     ['Init', 'POST'],
