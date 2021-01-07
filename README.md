@@ -1,21 +1,20 @@
-# tinkoff API
+# Tinkoff Payments Provider
 
 ## Install
 
-### yarn
-
-```shell
+```
 yarn add @atlantis-lab/tinkoff-api
 ```
 
 ## Example usage
 
-```js
+```typescript
 import { Tinkoff } from 'tinkoff-api'
 
 const tinkoff = new Tinkoff({
-  password: process.env.PASSWORD
+    password: process.env.PASSWORD
 })
 
 const response = await tinkoff.api.autopayments.init({ ... })
+
 ```
