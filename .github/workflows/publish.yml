@@ -6,8 +6,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
-    name: Release
+  publish:
     runs-on: ubuntu-latest
     
     steps:

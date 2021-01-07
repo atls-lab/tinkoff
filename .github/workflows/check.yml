@@ -2,12 +2,11 @@ name: Checks
 
 on:
   pull_request:
-    types: [closed]
-    branches: [master]
+    paths:
+      - '**'
 
 jobs:
-  run:
-    name: PreRelease
+  check:
     runs-on: ubuntu-latest
 
     steps:
