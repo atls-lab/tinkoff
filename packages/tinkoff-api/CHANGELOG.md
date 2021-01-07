@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/Atlantis-Lab/tinkoff-api/compare/@atlantis-lab/tinkoff-api@0.1.0...@atlantis-lab/tinkoff-api@0.1.1) (2020-12-28)
+
+
+### Bug Fixes
+
+* fix package fields ([ad0e4df](https://github.com/Atlantis-Lab/tinkoff-api/commit/ad0e4df22540f7349e727a060a34a31ff1244ca8))
+
+
+
+
+
 # [0.1.0](https://github.com/Atlantis-Lab/tinkoff-api/compare/@atlantis-lab/tinkoff-api@0.0.1...@atlantis-lab/tinkoff-api@0.1.0) (2020-12-28)
 
 

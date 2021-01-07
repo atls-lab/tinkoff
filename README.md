@@ -5,13 +5,7 @@
 ### yarn
 
 ```shell
-yarn add @aunited/tinkoff-api
-```
-
-### npm
-
-```shell
-npm i @aunited/tinkoff-api
+yarn add @atlantis-lab/tinkoff-api
 ```
 
 ## Example usage
