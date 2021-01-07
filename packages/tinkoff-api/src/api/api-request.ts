@@ -1,15 +1,13 @@
 import fetch              from 'node-fetch'
 
 import { ApiCallOptions } from '../interfaces'
-import { RequestSigner }  from './request-signer'
 import { apply }          from '../utils/helpers'
+import { signRequest }    from './request-security'
 
 export class APIRequest<T = any> extends Promise<T> {
   public static get [Symbol.species]() {
     return Promise
   }
-
-  private static readonly requestSigner = new RequestSigner()
 
   private readonly options: ApiCallOptions
 
@@ -36,15 +34,12 @@ export class APIRequest<T = any> extends Promise<T> {
 
   private async call() {
     try {
-      this.patchRequest()
-
       const requestUrl = this.buildUrl()
-
-      APIRequest.requestSigner.singRequest(this.options.requestParams)
+      const requestBody = this.buildBody()
 
       const response = await fetch(requestUrl, {
+        body: requestBody,
         method: this.options.httpMethod,
-        body: JSON.stringify(this.options.requestParams),
         headers: this.options.headers,
       })
 
@@ -61,8 +56,11 @@ export class APIRequest<T = any> extends Promise<T> {
     }
   }
 
-  private patchRequest() {
-    apply(this.options.requestParams, this.options.additionalBody)
+  private buildBody() {
+    const body = apply(this.options.requestParams, this.options.additionalBody)
+    const signedBody = signRequest(body)
+    const serializedBody = JSON.stringify(signedBody)
+    return serializedBody
   }
 
   private buildUrl() {
