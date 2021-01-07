@@ -1,6 +1,6 @@
 {
   "private": true,
-  "license": "UNLICENSED",
+  "license": "BSD 3-Clause",
   "scripts": {
     "build": "lerna run build",
     "lint": "mctl lint",
@@ -11,7 +11,6 @@
     "checkcommit": "mctl precommit"
   },
   "devDependencies": {
-    "@atlantis-lab/tsconfig": "0.0.23",
     "@monstrs/mctl": "0.1.82",
     "husky": "4.3.0",
     "typescript": "4.0.3",
