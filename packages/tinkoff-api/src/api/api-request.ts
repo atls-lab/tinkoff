@@ -1,7 +1,6 @@
 import fetch              from 'node-fetch'
 
 import { ApiCallOptions } from '../interfaces'
-import { apply }          from '../utils/helpers'
 import { signRequest }    from './request-security'
 
 export class APIRequest<T = any> extends Promise<T> {
@@ -57,7 +56,7 @@ export class APIRequest<T = any> extends Promise<T> {
   }
 
   private buildBody() {
-    const body = apply(this.options.requestParams, this.options.additionalBody)
+    const body = { ...this.options.requestParams, ...this.options.additionalBody }
     const signedBody = signRequest(body)
     const serializedBody = JSON.stringify(signedBody)
     return serializedBody

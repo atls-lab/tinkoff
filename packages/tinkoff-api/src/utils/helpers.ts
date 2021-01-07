@@ -8,7 +8,3 @@ export const excludeKeys = (base: any, excludeCandidateKeys: string[]) => {
     return { ...result, [key]: value }
   }, {})
 }
-
-export const apply = (target: any, applyer: any) => {
-  return Object.entries(applyer).reduce((result, [key, value]) => ({ ...result, [key]: value }), {})
-}
