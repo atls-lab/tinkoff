@@ -1,8 +1,8 @@
-import { signRequest, verifyRequest } from '../../src/api/request-security'
+import { signRequest, verifyRequest } from '../../src'
 
-describe('RequstSigner', () => {
-  describe('singRequest', () => {
-    it('shoud add Token property', () => {
+describe('RequestSigner', () => {
+  describe('signRequest', () => {
+    it('should add Token property', () => {
       const request: any = {
         TerminalKey: 'TinkoffBankTest',
         Amount: 100000,
@@ -38,7 +38,7 @@ describe('RequstSigner', () => {
   })
 
   describe('verifyRequest', () => {
-    it('should be successfully verify requeset', () => {
+    it('should be successfully verify request', () => {
       const request: any = {
         TerminalKey: 'TinkoffBankTest',
         Amount: 100000,
