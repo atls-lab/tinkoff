@@ -1,6 +1,6 @@
 {
   "private": true,
-  "license": "BSD 3-Clause",
+  "license": "BSD-3 Clause",
   "scripts": {
     "build": "lerna run build",
     "lint": "mctl lint",

@@ -4,9 +4,6 @@ on:
   pull_request:
     types: [closed]
     branches: [master]
-    paths-ignore:
-      - '!**package.json'
-      - '!**yarn.lock'
 
 jobs:
   run:
