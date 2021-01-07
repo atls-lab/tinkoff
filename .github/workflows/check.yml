@@ -7,7 +7,7 @@ on:
 
 jobs:
   run:
-    name: Run
+    name: PreRelease
     runs-on: ubuntu-latest
 
     steps:
