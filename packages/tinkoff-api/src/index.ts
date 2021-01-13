@@ -13,4 +13,3 @@ export {
 } from './enums'
 
 export * from './tinkoff'
-export { verifyRequest, signRequest } from './api'

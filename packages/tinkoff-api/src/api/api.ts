@@ -16,14 +16,14 @@ const tinkoffAPIMetaInfo = {
 }
 
 export class API {
-  private readonly tinkoffCore: TinkoffCore
+  private readonly core: TinkoffCore
 
   public readonly autopayments!: Autopayments
 
   public readonly payments!: Payments
 
-  public constructor(tinkoffCore: TinkoffCore) {
-    this.tinkoffCore = tinkoffCore
+  public constructor(core: TinkoffCore) {
+    this.core = core
     this.injectAPI()
   }
 
@@ -46,11 +46,11 @@ export class API {
               httpMethod,
               apiMethod: property,
               requestParams: params,
-              baseUrl: this.tinkoffCore.options.baseUrl,
-              headers: this.tinkoffCore.options.headers,
+              baseUrl: this.core.options.baseUrl,
+              headers: this.core.options.headers,
               additionalBody: {
-                Password: this.tinkoffCore.options.password,
-                TerminalKey: this.tinkoffCore.options.terminalKey,
+                Password: this.core.options.password,
+                TerminalKey: this.core.options.terminalKey,
               },
             }
 
@@ -64,6 +64,6 @@ export class API {
   }
 
   private async call(options: ApiCallOptions) {
-    return new APIRequest(options)
+    return new APIRequest(this.core, options)
   }
 }
