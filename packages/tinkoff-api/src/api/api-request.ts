@@ -1,12 +1,14 @@
 import fetch              from 'node-fetch'
 
 import { ApiCallOptions } from '../interfaces'
-import { signRequest }    from './request-security'
+import { TinkoffCore }    from '../tinkoff-core'
 
 export class APIRequest<T = any> extends Promise<T> {
   public static get [Symbol.species]() {
     return Promise
   }
+
+  private readonly core: TinkoffCore
 
   private readonly options: ApiCallOptions
 
@@ -14,7 +16,7 @@ export class APIRequest<T = any> extends Promise<T> {
 
   private reject: Function
 
-  public constructor(options: ApiCallOptions) {
+  public constructor(core: TinkoffCore, options: ApiCallOptions) {
     let resolve: Function
     let reject: Function
 
@@ -27,6 +29,7 @@ export class APIRequest<T = any> extends Promise<T> {
     this.reject = reject
 
     this.options = options
+    this.core = core
 
     this.call()
   }
@@ -57,7 +60,7 @@ export class APIRequest<T = any> extends Promise<T> {
 
   private buildBody() {
     const body = { ...this.options.requestParams, ...this.options.additionalBody }
-    const signedBody = signRequest(body)
+    const signedBody = this.core.tinkoff.security.signRequest(body)
     const serializedBody = JSON.stringify(signedBody)
     return serializedBody
   }
