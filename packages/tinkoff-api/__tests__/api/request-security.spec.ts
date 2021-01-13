@@ -1,6 +1,6 @@
 import { Tinkoff } from '../../src'
 
-describe('RequstSigner', () => {
+describe('RequestSigner', () => {
   const options = {
     password: 'ripazha',
     terminalKey: 'DEMO',
@@ -12,8 +12,8 @@ describe('RequstSigner', () => {
     tinkoff = new Tinkoff(options)
   })
 
-  describe('singRequest', () => {
-    it('shoud add Token property', () => {
+  describe('signRequest', () => {
+    it('should add Token property', () => {
       const request: any = {
         TerminalKey: 'TinkoffBankTest',
         Amount: 100000,
