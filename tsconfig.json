@@ -1,5 +1,4 @@
 {
   "extends": "@monstrs/tsconfig/tsconfig.base.json",
-  "include": ["packages/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["packages/**/*"]
 }
