@@ -7,25 +7,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @atlantis-lab/tinkoff-api
 
-
-
-
-
 ## 0.1.8 (2021-01-25)
 
 **Note:** Version bump only for package @atlantis-lab/tinkoff-api
 
-
-
-
-
 ## 0.1.7 (2021-01-13)
 
 **Note:** Version bump only for package @atlantis-lab/tinkoff-api
-
-
-
-
 
 ## 0.1.6 (2021-01-07)
 

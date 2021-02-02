@@ -8,8 +8,10 @@ assignees: TorinAsakura
 
 ### Описание бага
 
-1. **@package/name** включая vX.X.X
-2. Затрагиваемые области как пример: @package/name может нарушать работу **@package/name-next** в src/main.js
+1. **@package/name@0.0.0**
+2. Затрагиваемые области
+
+**_Например_**: @package/name@0.1.47 может нарушать работу **[@package/name-next@0.2.23](github.com/org-name/repo-name/backend/name-next/service/index.ts)**
 
 ### Воспроизведение
 
@@ -37,6 +39,5 @@ assignees: TorinAsakura
 
 ### Данные окружения
 
-- OS [например iOS, Android, Windows]
-- Браузер [например chrome, safari]
-- Версия [например 22]
+- OS и версия [например iOS@14.7, Android@6.7.3, Windows@7.1]
+- Браузер и версия [например Chrome@64, Safari@13]
